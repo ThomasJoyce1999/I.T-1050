@@ -1,17 +1,34 @@
-﻿using System;
-
-namespace lab_2
+namespace Lab2
 {
-    internal class Person
+    class Person
     {
-        internal void GatherInformation()
+        public string FirstName;
+        public string LastName;
+        public int Age;
+        public Person Spouse;
+        public static double SumOfAllAges;
+        public void GetUserData()
         {
-            throw new NotImplementedException();
+            System.Console.Write("What is your first name? ");
+            this.FirstName = System.Console.ReadLine();
+            System.Console.Write("What is your last name? ");
+            this.LastName = System.Console.ReadLine();
+            System.Console.Write("How old are you? ");
+            this.Age = int.Parse(System.Console.ReadLine());
+            System.Console.Write("What is your spouse's first name? ");
+            this.Spouse.FirstName = System.Console.ReadLine();
+            System.Console.Write("How old is your spouse? ");
+            this.Spouse.Age = int.Parse(System.Console.ReadLine());
+            this.Spouse.LastName = this.LastName;
+            SumOfAllAges += this.Age + this.Spouse.Age;
         }
-
-        internal void PrintNameAndAge()
+        public string GetFullName()
         {
-            throw new NotImplementedException();
+            return this.FirstName + " " + this.LastName;
+        }
+        public void PrintNameAndAge()
+        {
+            System.Console.WriteLine(GetFullName() + " " + "(" + Age + ")");
         }
     }
 }
